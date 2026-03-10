@@ -52,7 +52,7 @@ function pwdMatch($password, $passwordRepeat)
 function pwdNotStrong($password)
 {
   $result;
-  if (!preg_match("/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/", $password)) {
+  if (!preg_match("/^(.{0,7}|[^0-9]*|[^A-Z]*|[^a-z]*)$/", $password)) {
     $result = true;
   } else {
     $result = false;
