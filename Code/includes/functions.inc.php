@@ -129,7 +129,15 @@ function pwdNotStrong($password)
 {
   // $result will be true if password DOESN'T match the password policy
   $result;
-  if (!preg_match("/(.{0,7}|[^0-9]*|[^A-Z]*|[^a-z]*)/", $password)) {
+  if (!preg_match("/(^[.]{0,7})/", $password)) {
+    $result = true;
+  } else if (!preg_match("/[A-Z]/", $password)) {
+    $result = true;
+  } else if (!preg_match("/[a-z]/", $password)) {
+    $result = true;
+  } else if (!preg_match("/[0-9]/", $password)) {
+    $result = true;
+  } else if (!preg_match("/[^\w]/", $password)) {
     $result = true;
   } else {
     $result = false;
