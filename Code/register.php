@@ -41,7 +41,7 @@ if (isset($_GET["error"])) {
     <input type="password" id="pwd" name="pwd" placeholder="Password..." /><br />
     <label for="pwdRepeat">Please re-enter your password:</label><br />
     <input type="password" id="pwdRepeat" name="pwdRepeat" placeholder="Password..." /><br />
-    <input type="submit" name="submit" value="Submit" />
+    <input type="submit" name="submit" value="Submit" /><br>
   </form>
 
   <?php
